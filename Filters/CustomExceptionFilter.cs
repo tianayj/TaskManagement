@@ -17,7 +17,6 @@ namespace TaskManager.Filters
             HttpStatusCode statusCode;
             String errorMessage = "";
 
-            var exceptionType = context.Exception.GetType();
             if(context.Exception is UnauthorizedAccessException)
             {
                 errorMessage = "Unauthorized access! Please check your Bearer Token if you have one";

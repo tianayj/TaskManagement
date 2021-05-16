@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using TaskManager.DAL;
+using TaskManager.DAL.ExtendedModels;
 using TaskManager.Filters;
 using TaskManager.Service;
 
@@ -23,9 +24,9 @@ namespace TaskManager.Controllers
 
         [Authorize]
         [HttpPost]
-        public IHttpActionResult Create(Quote q)
+        public IHttpActionResult Create(QuoteModel q)
         {
-            if(!quoteService.Add(q))
+            if(!ModelState.IsValid)
             {
                 return BadRequest("Bad Request. Creation requires at least a body containing the string values for QuoteType, Contact, and Task.");
             }

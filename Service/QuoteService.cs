@@ -16,14 +16,9 @@ namespace TaskManager.Service
             return UoW.QuoteRepository.GetAll();
         }
 
-        public bool Add(Quote q)
+        public void Add(Quote q)
         {
-            if(!isValidQuote(q))
-            {
-                return false;
-            }
             UoW.QuoteRepository.Insert(q);
-            return true;
         }
 
         public Quote Find(int Id)
@@ -50,13 +45,13 @@ namespace TaskManager.Service
             UoW.QuoteRepository.Delete(q);
         }
 
-        private Boolean isValidQuote(Quote q)
-        {
-            if (q == null || q.QuoteType == null || q.Contact == null || q.Task == null)
-            {
-                return false;
-            }
-            return true;
-        }
+        //private Boolean isValidQuote(Quote q)
+        //{
+        //    if (q == null || q.QuoteType == null || q.Contact == null || q.Task == null)
+        //    {
+        //        return false;
+        //    }
+        //    return true;
+        //}
     }
 }

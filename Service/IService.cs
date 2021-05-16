@@ -11,7 +11,7 @@ namespace TaskManager.Service
     {
         IEnumerable<Quote> getQuotes();
 
-        bool Add(Quote q);
+        void Add(Quote q);
 
         Quote Find(int Id);
 

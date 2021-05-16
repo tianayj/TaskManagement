@@ -215,6 +215,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QuoteController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DAL\ExtendedModels\QuoteModel.cs" />
     <Compile Include="DAL\Quote.cs">
       <DependentUpon>TaskManagerDB.tt</DependentUpon>
     </Compile>
